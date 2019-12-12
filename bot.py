@@ -1,17 +1,19 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import os
+
 
 
 # Nome completo = //*[text() = 'Texto exato']
 # Nome incompleto = //*[contains(text(), 'texto parcial')]
 
 def bot():
-
+    chromedriver_path = os.path.abspath('chromedriver.exe')
     xpath_caixa_texto = '//*[@id="main"]/footer/div[1]/div[2]/div/div[2]'
    
     try:
-        driver = webdriver.Chrome('C:\\Users\\raji\\Desktop\\python\\chromedriver.exe')
+        driver = webdriver.Chrome(chromedriver_path)
     except:
         print('chromedriver.exe não encontrado')
         return 0
